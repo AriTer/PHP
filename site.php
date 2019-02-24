@@ -401,6 +401,44 @@
         print_r($book);*/
     ?>
    
+    <hr>
+    <h2>Inheritance with Class and Objects</h2>
+    <?php 
+        class Chef {
+            function makeChicken(){
+                echo "Italian or normal Chef makes chicken. <br>";
+            }
+
+            function makeSalad(){
+                echo "Chef makes salad. <br>";
+            }
+            
+            function makeSpecialDish(){
+                echo "Normal Chef only makes BBQ ribs. <br>";
+            }
+        }
+
+        class ItalianChef extends Chef{
+            function makePasta(){
+                echo "Italian Chef makes pasta. <br>";
+            }
+            
+            function makeSpecialDish(){
+                echo "Italian Chef only makes pizza. <br>";
+            }
+            }
+
+        $chef = new Chef();
+        $chef->makeChicken();
+        $chef->makeSpecialDish();
+
+        $chef = new ItalianChef();
+        $chef->makeChicken();
+        $chef->makePasta();
+        $chef->makeSpecialDish();
+    ?>
+
+
     <?php include "footer.html" ?>
 </body>
 </html>
